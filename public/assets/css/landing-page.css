@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Prompt', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #000;
 }
 
 h1,
@@ -121,8 +122,8 @@ header.masthead h1 {
 }
 
 footer.footer {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 /* Custom */
@@ -143,6 +144,7 @@ a:focus {
 }
 
 section {
+  background-color: #191919;
   padding-top: 20px;
 }
 
@@ -155,194 +157,34 @@ section {
   background: #000000c7;
 }
 
-.anime-search {
-  min-width: 20%;
-  border-radius: 50px;
-  border: #7b7b7b solid 1px;
-  font-size: 16px;
-  padding: 5px 15px;
-  outline: none;
-  -webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
-}
-
-#anime-formsearch .btn-group {
+#movie-menu {
+  width: 100%;
+  background: linear-gradient(to bottom, #000000, transparent);
   position: absolute;
-}
-
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu {
-  margin-top: -1px;
-  padding: 6px 20px;
-}
-
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
-  display: flex;
-  flex-direction: row;
-}
-
-#anime-formsearch .dropdown.dropdown-lg button {
-  outline: none;
-  box-shadow:none;
-} 
-
-#anime-formsearch .dropdown.dropdown-lg .anime-search-detail {
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-  padding: 6px 20px;
-}
-
-#anime-formsearch .anime-search-button {
-  border: none;
-  border-radius: 50%;
-  padding: 4px 9px;
-  position: absolute;
-  right: 4px;
-  top: 2px;
-  background: #00aabc;
-  outline: none;
-}
-
-#anime-formsearch .anime-search-button i {
-  color: #ffffff;
-}
-
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu .anime-search-detail #anime_category {
-  width: 200px;
-}
-
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu .anime-search-line {
-  border-left: 1px solid #ededed;
-  position: relative;
-  left: 0;
-  padding: 0 5px;
+  z-index: 2;
 }
 
 img.logo {
   height: 80px;
 }
 
-@media (min-width: 321px) and (max-width: 1024px) {
-  .anime-search {
-    width: 41px;
-    font-size: 14px;
-  }
-
-  .anime-search:-moz-placeholder {
-    color: transparent;
-  }
-
-  .anime-search::-webkit-input-placeholder {
-    color: transparent;
-  }
-
-  #anime-formsearch .anime-search-button {
-    pointer-events: none;
-    padding: 2px 8px;
-    right: 4px;
-    /* background-color: transparent; */
-    background-color: #fff;
-  }
-
-  .anime-search:focus:-moz-placeholder  {
-    color: #000;
-  }
-
-  .anime-search:focus::-webkit-input-placeholder {
-    color: #000;
-  }
-
-  #anime-formsearch .anime-search-button i {
-    color: #00aabc;
-  }
-
-  .anime-search:focus {
-    width: 164px;
-  }
-
-  .anime-search:focus ~ .anime-search-button {
-    background-color: transparent;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  #anime-formsearch .dropdown.dropdown-lg button {
-    padding: 0;
-  }
-
-  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
-    flex-direction: column;
-  }
-
-}
-
-@media (max-width: 320px) {
-
-  .anime-search {
-    width: 41px;
-    font-size: 14px;
-  }
-
-  .anime-search:-moz-placeholder {
-    color: transparent;
-  }
-
-  .anime-search::-webkit-input-placeholder {
-    color: transparent;
-  }
-
-  #anime-formsearch .anime-search-button {
-    pointer-events: none;
-    padding: 2px 8px;
-    right: 4px;
-    /* background-color: transparent; */
-    background-color: #ffffff;
-  }
-
-  .anime-search:focus:-moz-placeholder  {
-    color: #000;
-  }
-
-  .anime-search:focus::-webkit-input-placeholder {
-    color: #000;
-  }
-
-  #anime-formsearch .anime-search-button i {
-    color: #00aabc;
-  }
-
-  .anime-search:focus {
-    width: 120px;
-  }
-
-  .anime-search:focus ~ .anime-search-button {
-    background-color: transparent;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  #anime-formsearch .dropdown.dropdown-lg button {
-    padding: 0;
-  }
-
-  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
-    flex-direction: column;
-  }
-
-  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
-    flex-direction: column;
-  }
-}
-
-.navbar-light .navbar-nav .nav-link {
-  font-weight: 700;
+#movie-menu .navbar-nav .nav-link {
   text-transform: uppercase;
-  color: #000000;
+  color: #9c9c9c;
 }
 
-.navbar-light .navbar-nav .active>.nav-link{
-  color:#00aabc;
+#movie-menu .navbar-nav .active>.nav-link{
+  color:#ffffff;
+  position: relative;
+}
+
+#movie-menu .navbar-nav .active>.nav-link:after {
+  content: '•';
+  font-size: 26px;
+  position: absolute;
+  top: 19px;
+  right: 48%;
+  width: max-content;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -356,13 +198,101 @@ img.logo {
 
 .navbar-expand-lg .navbar-nav .dropdown-item:active,
 .navbar-expand-lg .navbar-nav .dropdown-item.active {
-  background: #00aabc;
+  background: #ffffff;
   font-weight: 700;
+}
+
+#movie-formsearch {
+  width: 200px;
+}
+
+.movie-search {
+  width: 41px;
+  background: transparent;
+  border: #7b7b7b solid 1px;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 15px;
+  outline: none;
+  -webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+.movie-search:-moz-placeholder {
+  color: transparent;
+}
+
+.movie-search::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.movie-search:-moz-value {
+  color: transparent;
+}
+
+.movie-search::-webkit-input-value {
+  color: transparent;
+}
+
+.movie-search:focus:-moz-placeholder  {
+  color: #9c9c9c;
+}
+
+.movie-search:focus::-webkit-input-placeholder {
+  color: #9c9c9c;
+}
+
+.movie-search:focus {
+  width: 100%;
+}
+
+#movie-formsearch .movie-search-button {
+  cursor: pointer;
+  pointer-events: none;
+  border: none;
+  padding: 4px 9px;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  background: transparent;
+  outline: none;
+}
+
+#movie-formsearch .movie-search:focus ~ .movie-search-button {
+  background-color: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#movie-formsearch .btn-group {
+  position: absolute;
+}
+
+#movie-formsearch .movie-search-button i {
+  color: #ffffff;
+}
+
+@media (min-width: 321px) and (max-width: 1024px) {
+  
+  .movie-search {
+    width: 41px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .movie-search:focus {
+    width: 120px;
+  }
+
 }
 
 #HomeSlide.swiper-container {
   width: 100%;
-  height:550px;
+  height:650px;
 }
 
 #HomeSlide .swiper-slide .slider-overlay{
@@ -388,11 +318,13 @@ img.logo {
 }
 
 #HomeSlide .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  left: 47%;
+  top: 48%;
+  right: 2rem;
 }
 
 #HomeSlide .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-  right: 47%;
+  top: 52%;
+  right: 2rem;
 }
 
 #HomeSlide .swiper-button-next::after, .swiper-button-prev::after {
@@ -401,109 +333,18 @@ img.logo {
 
 #HomeSlide .swiper-wrapper .swiper-slide .slider-area {
   position: absolute;
-  min-width: 60%;
-  width: 60%;
-  left: 10%;
-  top: 10%;
+  width: 100%;
+  bottom: 6%;
   z-index: 2;
 }
 
 #HomeSlide .swiper-wrapper .swiper-slide .slider-area h2.title-slider {
-  width: fit-content;
+  width: 100%;
   color: #ffffff;
-  font-size: 48px;
+  font-size: 100px;
+  font-weight: 700;
   text-transform: uppercase;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area span.cate-small {
-  width: fit-content;
-  text-transform: uppercase;
-  padding: 0 5px;
-  color: #ababab;
-  border: 1px solid #ababab;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-detail span {
-  color: #ababab;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-detail span::before {
-  content: '|';
-  position: relative;
-  left: 0;
-  padding: 0 5px;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-detail span:first-child:before {
-  content: '';
-  padding: 0;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-description {
-  color: #ababab;
-  width: 60%;
-  margin-top: .5rem;
-  overflow: hidden;
-  height: 180px;
-  min-height: 180px;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer {
-  display: flex;
-  flex-direction: row;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play {
-  margin-right: 10px;
-  padding: 8px 10px;
-  width: 150px;
-  border-radius: 5px;
-  border: none;
-  background: #00a1ff;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play:hover {
-  background: #ff4949;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play i {
-  font-size: 24px;
-  vertical-align: middle;
-  color: #ffffff;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score {
-  display: flex;
-  flex-direction: column;
-  vertical-align: middle;
   text-align: center;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .score-line {
-  border-left: 1px solid #ffffff;
-  content: '';
-  left: 0;
-  padding: 0 5px;
-}
-
-#HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score span {
-  text-transform: uppercase;
-  font-size: 16px;
-  color: #fff;
-}
-
-.navbar-expand-lg {
-  box-shadow: 2px 2px 7px #a5a1a1;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -609,46 +450,12 @@ img.logo {
     font-size: 14px;
   }
 
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area span.cate-small {
-    font-size: 10px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-detail span {
-    font-size: 10px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-description {
-    font-size: 10px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-description {
-    height: 100px;
-    min-height: 100px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play {
-    width: 94px;
-    padding: 5px 10px;
-  }
-
   #HomeSlide .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
     left: 42%;
   }
   
   #HomeSlide .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
     right: 42%;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play i {
-    font-size: 16px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score span {
-    font-size: 12px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score {
-    font-size: 18px;
   }
 
 }
@@ -688,40 +495,6 @@ img.logo {
     margin-bottom: 0;
   }
 
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area span.cate-small {
-    font-size: 10px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-detail span {
-    font-size: 7px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-description {
-    /* display: none; */
-    font-size: 7px;
-    width: 100%;
-    height: 40px;
-    min-height: 40px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play {
-    padding: 0px 10px;
-    width: 75px;
-    border-radius: 3px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer button.slider-play i {
-    font-size: 14px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score {
-    font-size: 16px;
-  }
-
-  #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score span {
-    font-size: 10px;
-  }
-
   #HomeSlide .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
     left: 40%;
   }
@@ -737,33 +510,33 @@ img.logo {
   
 }
 
-#anime-banners {
+#movie-banners {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-#anime-banners img.banners {
+#movie-banners img.banners {
   width: 100%;
 }
 
-.anime-content {
+.movie-content {
   padding: 2rem 0;
+  color: #fff;
 }
 
-.anime-content h1 {
-  letter-spacing: 3pt;
+.movie-content h1 {
   text-transform: uppercase;
 }
 
-.anime-content h2 {
-  font-size: 22px;
+.movie-content h2 {
+  font-size: 34px;
 }
 
-#anime-list {
+#movie-list {
   flex-direction: column;
 }
 
-ul.list-anime {
+ul.list-movie {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -783,29 +556,38 @@ ul.list-anime {
   list-style: none;
 }
 
-ul.list-anime > li {
-  margin: 10px 7px;
+ul.list-movie > li {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  height: 320px;
+  background: #353535;
 }
 
-ul.list-anime > li .anime-box {
-  width: 271px;
-  height: 383px;
+ul.list-movie > li .movie-box {
+  width: 190px;
+  height: 264px;
+  position: relative;
   overflow: hidden;
-  border-radius: 5px;
   -webkit-transition: -webkit-transform 200ms ease;
   transition: -webkit-transform 200ms ease;
   transition: transform 200ms ease;
   transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
-ul.list-anime > li .anime-box:hover {
-  box-shadow: 4px 4px 5px #b0d7ff;
+ul.list-movie > li .movie-box .movie-overlay {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #353535,transparent,transparent, transparent);
 }
 
-ul.list-anime > li .anime-box a img {
+
+ul.list-movie > li .movie-box a img {
   width: 100%;
-  height: -webkit-fill-available;
+  height: 100%;
   position: relative;
   cursor: pointer;
   -webkit-transition: -webkit-transform 200ms ease;
@@ -814,97 +596,105 @@ ul.list-anime > li .anime-box a img {
   transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
-ul.list-anime > li .anime-box a img:hover {
+ul.list-movie > li .movie-box a img:hover {
   transform: scale(1.1);
 }
 
-ul.list-anime > li .anime-box .anime-view {
+ul.list-movie > li .movie-box .movie-view {
   position: absolute;
-  right: 0;
+  left: 0;
   padding: 0 8px;
-  color: #e4e4e4;
-  background: #00d4ea;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
+  color: #333333;
+  background: #fff;
+  font-weight: 700;
+  border-bottom-right-radius: 50px;
 }
 
-ul.list-anime > li div.title-in {
+ul.list-movie > li .movie-box .movie-quality {
   position: absolute;
-  /* display: flex;
-  flex-direction: row;
-  align-items: flex-start; */
-  width: 100%;
-  /* height: 100px; */
-  height: fit-content;
-  padding-bottom: 20px;
+  width: 60px;
+  right: 0;
+  padding: 0 4px 0 8px;
+  color: #fff;
+  background: #333333;
+  font-size: 12px;
+  font-weight: 700;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+ul.list-movie > li .movie-box .movie-sound {
+  position: absolute;
+  width: max-content;
+  right: 0;
+  top: 20px;
+  padding: 0 4px 0 8px;
+  color: #fff;
+  background: #676767;
+  font-size: 12px;
+  font-weight: 100;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+ul.list-movie > li div.title-in {
+  position: relative;
+  width: 190px;
+  height: max-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
   bottom: 0;
   background-color: transparent;
-  background-image: linear-gradient(transparent, #000000a1);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
-ul.list-anime > li div.title-in h2 {
+ul.list-movie > li div.title-in h2 {
   width: 80%;
   margin: 0 auto;
   text-align: left;
   text-transform: uppercase;
-  font-size: 22px;
-  /* -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  white-space: nowrap;
-  overflow: hidden;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis; */
+  font-size: 16px;
+  font-weight: 100;
+  text-align: center;
 }
 
-ul.list-anime > li div.title-in h2:hover {
+ul.list-movie > li div.title-in h2:hover {
   transform: scale(1.1);
 }
 
-ul.list-anime > li div.title-in h2 a {
+ul.list-movie > li div.title-in h2 a {
   word-break: break-word;
   color: #ffffff;
   cursor: pointer;
 }
 
-ul.list-anime > li div.title-in h2 a:hover {
+ul.list-movie > li div.title-in h2 a:hover {
   text-decoration: none;
 }
 
-ul.list-anime > li div.title-in .anime-score {
-  width: 80%;
-  margin: 0 auto;
-  text-align: left;
+ul.list-movie > li div.title-in .movie-score {
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+  font-style: italic;
+  padding: 0 5px;
+  padding-top: 5px;
 }
 
-ul.list-anime > li div.title-in .anime-score span {
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: normal;
-  font-size: 12px;
-}
-
-ul.list-anime > li div.title-in .anime-score span.score {
-  color: #0095ff;
-  font-size: 26px;
-}
 
 @media (min-width: 481px) and (max-width: 768px) {
 
-  ul.list-anime > li .anime-box {
+  ul.list-movie > li .movie-box {
     width: 166px;
     height: 228px;
   }
 
-  ul.list-anime > li div.title-in {
+  ul.list-movie > li div.title-in {
     padding-bottom: 10px;
   }
 
-  ul.list-anime > li div.title-in h2 {
+  ul.list-movie > li div.title-in h2 {
     font-size: 14px;
   }
 
@@ -912,20 +702,20 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 321px) and (max-width: 480px) { 
 
-  ul.list-anime > li .anime-box {
+  ul.list-movie > li .movie-box {
     width: 173px;
     height: 240px;
   }
 
-  ul.list-anime > li div.title-in {
+  ul.list-movie > li div.title-in {
     padding-bottom: 10px;
   }
 
-  ul.list-anime > li div.title-in .anime-score span.score {
+  ul.list-movie > li div.title-in .movie-score span.score {
     font-size: 22px;
   }
 
-  ul.list-anime > li div.title-in h2 {
+  ul.list-movie > li div.title-in h2 {
     font-size: 12px;
   }
 
@@ -933,41 +723,41 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (max-width: 320px) {
 
-  ul.list-anime > li .anime-box {
+  ul.list-movie > li .movie-box {
     width: 146px;
     height: 206px;
   }
 
-  ul.list-anime > li div.title-in {
+  ul.list-movie > li div.title-in {
     padding-bottom: 10px;
   }
 
-  ul.list-anime > li div.title-in .anime-score span.score {
+  ul.list-movie > li div.title-in .movie-score span.score {
     font-size: 20px;
   }
 
-  ul.list-anime > li div.title-in h2 {
+  ul.list-movie > li div.title-in h2 {
     font-size: 12px;
   }
   
 }
 
-#anime-player {
+#movie-player {
   width: 100%;
   min-height: 650px;
   margin-top: 1rem;
 }
 
-#anime-video #anime-player .anime-episode {
+#movie-video #movie-player .movie-episode {
   margin-bottom: 2rem;
 }
 
-#anime-video #anime-player .anime-episode #NextEP.swiper-container {
+#movie-video #movie-player .movie-episode #NextEP.swiper-container {
   width: 100%;
   height: 100%;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-slide {
+#movie-video #movie-player .movie-episode #NextEP .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -991,25 +781,25 @@ ul.list-anime > li div.title-in .anime-score span.score {
   transition: all 0.3s ease-out;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-slide a img {
+#movie-video #movie-player .movie-episode #NextEP .swiper-slide a img {
   width: 100%;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-slide:hover {
+#movie-video #movie-player .movie-episode #NextEP .swiper-slide:hover {
   transform: scale(1.1);
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+#movie-video #movie-player .movie-episode #NextEP .swiper-slide a span {
   text-transform: uppercase;
   font-weight: 700;
   color: #717171;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-slide a span.active {
+#movie-video #movie-player .movie-episode #NextEP .swiper-slide a span.active {
   color: #00aabc;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-button-prev {
+#movie-video #movie-player .movie-episode #NextEP .swiper-button-prev {
   height: 100%;
   top: 22px;
   left: 0;
@@ -1018,7 +808,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   background: linear-gradient(to right, black, transparent);
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-button-next {
+#movie-video #movie-player .movie-episode #NextEP .swiper-button-next {
   height: 100%;
   top: 22px;
   right: 0;
@@ -1027,13 +817,13 @@ ul.list-anime > li div.title-in .anime-score span.score {
   background: linear-gradient(to left, black, transparent);
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
-#anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+#movie-video #movie-player .movie-episode #NextEP .swiper-button-prev::after,
+#movie-video #movie-player .movie-episode #NextEP .swiper-button-next::after {
   font-size: 46px;
   color: #fff;
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-pagination-bullet {
+#movie-video #movie-player .movie-episode #NextEP .swiper-pagination-bullet {
   width: 20px;
   height: 20px;
   text-align: center;
@@ -1044,26 +834,26 @@ ul.list-anime > li div.title-in .anime-score span.score {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#anime-video #anime-player .anime-episode #NextEP .swiper-pagination-bullet-active {
+#movie-video #movie-player .movie-episode #NextEP .swiper-pagination-bullet-active {
   color: #232323;
   background: #00aabc;
 }
 
-#anime-player #player {
+#movie-player #player {
   width: 100%;
   height: -webkit-fill-available;
 }
 
 
 @media (min-width: 1025px) {
-  #anime-player #player {
+  #movie-player #player {
     height: 650px!important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  #anime-player {
+  #movie-player {
     min-height: 580px;
   }
 
@@ -1071,7 +861,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 481px) and (max-width: 768px) {
 
-  #anime-player {
+  #movie-player {
     min-height: 420px;
   }
 
@@ -1079,16 +869,16 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 321px) and (max-width: 480px) { 
 
-  #anime-player {
+  #movie-player {
     min-height: 230px;
   }
 
-  #anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+  #movie-video #movie-player .movie-episode #NextEP .swiper-slide a span {
     font-size: 12px;
   }
 
-  #anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
-  #anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+  #movie-video #movie-player .movie-episode #NextEP .swiper-button-prev::after,
+  #movie-video #movie-player .movie-episode #NextEP .swiper-button-next::after {
     font-size: 30px;
   }
 
@@ -1096,31 +886,31 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (max-width: 320px) {
   
-  #anime-player {
+  #movie-player {
     min-height: 200px;
   }
 
-  #anime-player #player {
+  #movie-player #player {
     height: 200px;
   }
 
-  #anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
-  #anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+  #movie-video #movie-player .movie-episode #NextEP .swiper-button-prev::after,
+  #movie-video #movie-player .movie-episode #NextEP .swiper-button-next::after {
     font-size: 26px;
   }
 
-  #anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+  #movie-video #movie-player .movie-episode #NextEP .swiper-slide a span {
     font-size: 12px;
   }
 
 }
 
-#anime-player #player {
+#movie-player #player {
   width: 100%;
   height: -webkit-fill-available;
 }
 
-#anime-detail {
+#movie-detail {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -1128,7 +918,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   margin-bottom: 1rem;
 }
 
-#anime-video #anime-detail .anime-poster {
+#movie-video #movie-detail .movie-poster {
   width: 30%;
   height: fit-content;
   margin: 0 auto;
@@ -1137,7 +927,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   cursor: pointer;
 }
 
-#anime-video #anime-detail .anime-poster img {
+#movie-video #movie-detail .movie-poster img {
   width: 100%;
   position: relative;
   -webkit-transition: -webkit-transform 200ms ease;
@@ -1151,31 +941,31 @@ ul.list-anime > li div.title-in .anime-score span.score {
   transition-delay: 0.3s ease-in-out;*/
 }
 
-#anime-video #anime-detail .anime-card-detail {
+#movie-video #movie-detail .movie-card-detail {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0 2rem;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-title {
+#movie-video #movie-detail .movie-card-detail .movie-title {
   font-size: 64px;
   color: #ffffff;
   text-align: left;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-category {
+#movie-video #movie-detail .movie-card-detail .movie-category {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 5px;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-category a {
+#movie-video #movie-detail .movie-card-detail .movie-category a {
   margin-bottom: 5px;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-category span.cate-name {
+#movie-video #movie-detail .movie-card-detail .movie-category span.cate-name {
   width: fit-content;
   text-transform: uppercase;
   padding: 0 5px;
@@ -1187,41 +977,41 @@ ul.list-anime > li div.title-in .anime-score span.score {
   margin-bottom: 5px;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-date {
+#movie-video #movie-detail .movie-card-detail .movie-date {
   display: flex;
   flex-direction: row;
   margin-bottom: .5rem;
   flex-wrap: wrap;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-date span {
+#movie-video #movie-detail .movie-card-detail .movie-date span {
   color: #ababab;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-date span::before {
+#movie-video #movie-detail .movie-card-detail .movie-date span::before {
   content: '|';
   position: relative;
   left: 0;
   padding: 0 5px;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-date span:first-child:before {
+#movie-video #movie-detail .movie-card-detail .movie-date span:first-child:before {
   content: '';
   padding: 0;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-description {
+#movie-video #movie-detail .movie-card-detail .movie-description {
   display: flex;
   flex-direction: row;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-description p {
+#movie-video #movie-detail .movie-card-detail .movie-description p {
   color: #ffffff;
   text-align: left;
   width: 70%;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-description .anime-score {
+#movie-video #movie-detail .movie-card-detail .movie-description .movie-score {
   color: #ffffff;
   width: 30%;
   vertical-align: middle;
@@ -1231,7 +1021,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   font-size: 26px;
 }
 
-#anime-video #anime-detail .anime-card-detail .anime-description .anime-score span{
+#movie-video #movie-detail .movie-card-detail .movie-description .movie-score span{
   text-transform: uppercase;
   color: #ababab;
   font-weight: normal;
@@ -1240,7 +1030,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  #anime-video #anime-detail .anime-card-detail .anime-title {
+  #movie-video #movie-detail .movie-card-detail .movie-title {
     font-size: 48px;
   }
 
@@ -1248,24 +1038,24 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 481px) and (max-width: 768px) {
 
-  #anime-video .container .row {
+  #movie-video .container .row {
     flex-direction: column-reverse!important;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-title {
+  #movie-video #movie-detail .movie-card-detail .movie-title {
     font-size: 48px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description {
+  #movie-video #movie-detail .movie-card-detail .movie-description {
     flex-direction: column;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description p {
+  #movie-video #movie-detail .movie-card-detail .movie-description p {
     width: 100%;
     font-size: 14px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description .anime-score {
+  #movie-video #movie-detail .movie-card-detail .movie-description .movie-score {
     text-align: left;
   }
 
@@ -1273,44 +1063,44 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (min-width: 321px) and (max-width: 480px) { 
 
-  #anime-player #player {
+  #movie-player #player {
     height: 255px;
   }
 
-  #anime-video .container .row {
+  #movie-video .container .row {
     flex-direction: column-reverse!important;
   }
 
-  #anime-detail {
+  #movie-detail {
     margin-top: 0;
     flex-direction: column;
   }
 
-  #anime-video #anime-detail .anime-poster {
+  #movie-video #movie-detail .movie-poster {
     width: 100%;
     height: 350px;
     border-radius: 0;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-title {
+  #movie-video #movie-detail .movie-card-detail .movie-title {
     font-size: 36px;
     margin-top: 1rem;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-date {
+  #movie-video #movie-detail .movie-card-detail .movie-date {
     font-size: 14px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description {
+  #movie-video #movie-detail .movie-card-detail .movie-description {
     flex-direction: column;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description p {
+  #movie-video #movie-detail .movie-card-detail .movie-description p {
     width: 100%;
     font-size: 14px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description .anime-score {
+  #movie-video #movie-detail .movie-card-detail .movie-description .movie-score {
     text-align: left;
   }
 
@@ -1318,51 +1108,51 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 @media (max-width: 320px) {
   
-  #anime-video .container .row {
+  #movie-video .container .row {
     flex-direction: column-reverse!important;
   }
 
-  #anime-detail {
+  #movie-detail {
     margin-top: 0;
     flex-direction: column;
   }
 
-  #anime-video #anime-detail .anime-poster {
+  #movie-video #movie-detail .movie-poster {
     width: 100%;
     height: 350px;
     border-radius: 0;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-title {
+  #movie-video #movie-detail .movie-card-detail .movie-title {
     font-size: 36px;
     margin-top: 1rem;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-category span.cate-name {
+  #movie-video #movie-detail .movie-card-detail .movie-category span.cate-name {
     font-size: 12px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-date {
+  #movie-video #movie-detail .movie-card-detail .movie-date {
     flex-direction: column;
     text-align: left;
     font-size: 12px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-date span::before {
+  #movie-video #movie-detail .movie-card-detail .movie-date span::before {
     content: '';
     padding: 0;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description {
+  #movie-video #movie-detail .movie-card-detail .movie-description {
     flex-direction: column;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description p {
+  #movie-video #movie-detail .movie-card-detail .movie-description p {
     width: 100%;
     font-size: 12px;
   }
 
-  #anime-video #anime-detail .anime-card-detail .anime-description .anime-score {
+  #movie-video #movie-detail .movie-card-detail .movie-description .movie-score {
     text-align: left;
   }
 
@@ -1490,7 +1280,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   .sidenav a {font-size: 18px;}
 }
 
-#anime-loadmore {
+#movie-loadmore {
   text-transform: uppercase;
   margin: 2rem auto;
   background: #00d4ea;
@@ -1504,43 +1294,44 @@ ul.list-anime > li div.title-in .anime-score span.score {
   transition: all 0.3s ease-out;
 }
 
-#anime-loadmore:hover {
+#movie-loadmore:hover {
   transform: scale(1.1);
 }
 
-#anime-footer p {
-  text-align: left;
+#movie-footer p {
+  color: #fff;
+  text-align: center;
 }
 
-#anime-contract .nav {
+#movie-contract .nav {
   justify-content: center;
 }
 
-#anime-contract .nav-pills .nav-link {
+#movie-contract .nav-pills .nav-link {
   color: #000000;
   font-size: 18px;
   font-weight: 500;
 }
 
-#anime-contract .nav-pills .nav-link.active, 
-#anime-contract .nav-pills .show>.nav-link {
+#movie-contract .nav-pills .nav-link.active, 
+#movie-contract .nav-pills .show>.nav-link {
   color: #00aabc;
   background: transparent;
   border-bottom: 3px solid #00aabc;
   border-radius: 0;
 }
 
-#anime-contract .tab-content {
+#movie-contract .tab-content {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-#anime-contract textarea,
-#anime-contract input {
+#movie-contract textarea,
+#movie-contract input {
   margin-bottom: 20px;
 }
 
-#anime-contract .anime-btnrequest {
+#movie-contract .movie-btnrequest {
   background: #2ef5ff;
   border-radius: 50px;
   border: 3px solid #3ee6df;
@@ -1551,6 +1342,6 @@ ul.list-anime > li div.title-in .anime-score span.score {
   transition: all 0.3s ease-out;
 }
 
-#anime-contract .anime-btnrequest:hover {
+#movie-contract .movie-btnrequest:hover {
   transform: scale(1.1);
 }

@@ -12,14 +12,16 @@ class Home extends BaseController
 	public $path_ads = "";
 	public $branch = 1;
 	public $backURL = "https://backend.gumovie1.com/public/";
-	public $document_root = 'http://192.168.10.14:83/public/';
+	public $document_root = '';
 	public $path_thumbnail = "https://anime.vip-streaming.com/";
 
 	public function __construct()
 	{
+		$this->config = new \Config\App();
 		$this->validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
 		$this->VideoModel = new Video_Model();
+		$this->document_root = $this->config->docURL;
 		$this->branch = 1;
 
 		// Directory
@@ -47,9 +49,10 @@ class Home extends BaseController
 
 		$chk_act = [
 			'home' => 'active',
-			'subthai' => '',
-			'soundthai' => '',
-			'category' => '',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
 		];
 
 		$header_data = [

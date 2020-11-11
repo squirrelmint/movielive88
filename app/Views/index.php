@@ -1,65 +1,37 @@
-  <header>
+  
     <!-- Slider main container -->
     <div id="HomeSlide" class="swiper-container">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <!-- Slides -->
-        <?PHP
-
-        foreach ($slide_anime as $val) {
-          $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
-
-        ?>
+          <!-- Slides -->
 
           <div class="swiper-slide">
-            
             <div class="slider-area">
-              <h2 class="title-slider"><?= $val['movie_thname'] ?></h2>
-              <?PHP
-
-              foreach ($val['cate_data'] as $cate_val) {
-              ?>
-                <a href="<?php echo base_url() . '/category/' . $cate_val['category_id'] . '/' . $cate_val['category_name'] ?>" target="_blank">
-                  <span class="cate-small"><?= $cate_val['category_name'] ?></span>
-                </a>
-              <?php
-
-              }
-              ?>
-              <div class="slider-detail">
-                <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
-                <span><?= $val['ep_count']?> EPISODES</span>
-              </div>
-
-              <p class="slider-description">
-
-              <?= $val['movie_des'] ?>
-
-
-            </p>
-
-              <div class="slider-footer">
-                <button class="slider-play" onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')">
-                  <i class="fas fa-play"></i>
-                </button>
-                <div class="score-line"></div>
-                <div class="slider-score">
-                  <span>Score</span>
-                  <?= $val['movie_ratescore'] ?>/100
-
-                </div>
-              </div>
+              <h2 class="title-slider">Iron man</h2>
             </div>
-            <div class="slider-overlay">  </div>
-            <img src="<?= base_url(). $val['slide_img'] ?> ">
+            <img src="<?= $document_root ?>img_slide/1.jpg">
           </div>
 
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/2.jpg">
+          </div>
 
-        <?php
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/3.jpg">
+          </div>
 
-        }
-        ?>
-
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/4.jpg">
+          </div>
 
       </div>
       <!-- If we need pagination -->
@@ -74,47 +46,28 @@
     </div>
   </header>
 
-  <?php foreach ($ads as $value) {
-    if ($value['ads_position'] == "1") {
-  ?>
-
-      <section id="anime-banners" class="bg-light text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-lg-12 ">
-              <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
-            </div>
-          </div>
-        </div>
-      </section>
-
-  <?php } else {
-    }
-  }
-  ?>
-
-  <section class="anime-content bg-light text-center">
+  <section class="movie-content text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-12 ">
-          <h1>Anime8k</h1>
-          <h2>ดูการ์ตูนออนไลน์ใหม่ ๆ ได้ทุกวัน</h2>
+          <h1>MOVIELIVE88</h1>
+          <h2>หนังใหม่ ดูหนังออนไลน์ครบเรื่องทุกรสที่ MOVIELIVE88</h2>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Icons Grid -->
-  <section class="bg-light text-center">
+  <section class="text-center">
     <div class="container">
       <div class="row">
-        <ul id="list-anime" class="list-anime">
+        <ul id="list-movie" class="list-movie">
 
           <?PHP
           foreach ($list_anime as $val) {
           ?>
             <li>
-              <div class="anime-box">
+              <div class="movie-box">
 
                 <?php if (substr($val['movie_picture'], 0, 4) == 'http') {
                   $movie_picture = $val['movie_picture'];
@@ -128,30 +81,33 @@
                 <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                   <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
-                <span class="anime-view"><i class="fas fa-eye"></i> 3</span>
+                <div class="movie-overlay"></div>
+                <span class="movie-view">4.3k <i class="fas fa-eye"></i></span>
+                <span class="movie-quality">Full HD</span>
+                <span class="movie-sound">พากษ์ไทย</span>
               </div>
               <div class="title-in">
-                <div class="anime-score">
-                  <span>score</span>
-                  <span class="score"><?= $val['movie_ratescore'] ?></span>
-                </div>
                 <h2>
                   <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
                 </h2>
+
+                <div class="movie-score">
+                <i class="fas fa-star"></i> 9.8
+                </div>
               </div>
             </li>
           <?php  } ?>
         </ul>
-        <button id="anime-loadmore">Load more ...</button>
+        <!-- <button id="movie-loadmore">Load more ...</button> -->
       </div>
     </div>
   </section>
 
-  <section id="anime-footer" class="bg-light text-center">
+  <section id="movie-footer" class="text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a class="navbar-brand" href="#">Start Bootstrap</a>
+          <a class="navbar-brand" href="#"><img class="logo" src="<?= base_url() . '/public/logo/Logo-Anime-8k-1.png' ?> "></a>
           <p><strong>ดูอนิเมะฟรี</strong> โหลดไวแบบไม่มีสะดุดภาพคมชัดระดับ HD FullHD 4k ครบทุกเรื่องทุกรสดูได้ทุกที่ทุกเวลาทั้งบนมือถือ แท็บเล็ต เครื่องคอมพิวเตอร์ ระบบปฏิบัติการ Android และ IOS ดูอนิเมะใหม่ให้รับชมอีกมากมาย สามารถรับชมฟรีได้ทุกที่ทุกเวลาตลอด 24 ชั่วโมง</p>
         </div>
       </div>
