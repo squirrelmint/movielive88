@@ -20,7 +20,8 @@
   <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="<?= $document_root ?>assets/css/landing-page.css?v=1" rel="stylesheet">
@@ -53,9 +54,6 @@
             </li>
             <li class="nav-item <?= $chk_act['poppular'] ?>">
               <a class="nav-link" href="#">Poppular</a>
-            </li>
-            <li class="nav-item <?= $chk_act['newmovie'] ?>">
-              <a class="nav-link" href="#">หนังมาใหม่</a>
             </li>
             <li class="nav-item <?= $chk_act['netflix'] ?>">
               <a class="nav-link" href="#">Netflix</a>
@@ -183,3 +181,50 @@
       }
         
     </script>
+
+    <!-- Slider main container -->
+    <div id="HomeSlide" class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Iron man</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/1.jpg">
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/2.jpg">
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/3.jpg">
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider">Joker</h2>
+            </div>
+            <img src="<?= $document_root ?>img_slide/4.jpg">
+          </div>
+
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </header>

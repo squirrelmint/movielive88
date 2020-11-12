@@ -1,27 +1,9 @@
-<?php foreach ($ads as $value) {
-  if ($value['ads_position'] == "1") {
-?>
-
-    <section id="anime-banners" class="bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-12 ">
-            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<?php } else {
-  }
-}
-?>
 
 <!-- Icons Grid -->
-<section class="bg-light text-center">
+<section class="text-center">
   <div class="container">
-    <div id="anime-list" class="row">
-      <div class="anime-title-list">
+    <div id="movie-list" class="row">
+      <div class="movie-title-list">
         <?php
           if (!empty($cate_name)) {
         
@@ -35,7 +17,7 @@
         ?>
         <h1><?= $title ?></h1>
       </div>
-      <ul id="list-anime" class="list-anime">
+      <ul id="list-movie" class="list-movie">
 
         <?PHP
         if ($list_anime) {
@@ -43,7 +25,7 @@
 
         ?>
             <li>
-              <div class="anime-box">
+              <div class="movie-box">
 
                 <?php if (substr($val['movie_picture'], 0, 4) == 'http') {
                   $movie_picture = $val['movie_picture'];
@@ -52,29 +34,31 @@
                 }
 
                 $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
-
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')">
-                  <img src="<?= $movie_picture ?>">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
+                  <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
-                <span class="anime-view"><i class="fas fa-eye"></i> 3</span>
+                <div class="movie-overlay"></div>
+                <span class="movie-view">4.3k <i class="fas fa-eye"></i></span>
+                <span class="movie-quality">Full HD</span>
+                <span class="movie-sound">พากษ์ไทย</span>
               </div>
               <div class="title-in">
-                <div class="anime-score">
-                  <span>score</span>
-                  <span class="score"><?= $val['movie_ratescore'] ?></span>
-                </div>
                 <h2>
-                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
                 </h2>
+
+                <div class="movie-score">
+                <i class="fas fa-star"></i> 9.8
+                </div>
               </div>
             </li>
           <?php  }
         } else {
           ?>
 
-          <h3> ไม่พบอนิเมะ ที่คุณค้นหา</h3>
+          <h3> ไม่พบหนังที่คุณค้นหา</h3>
 
         <?php
         } ?>
@@ -84,7 +68,7 @@
       <?php
       if ($list_anime) {
       ?>
-        <button id="anime-loadmore">Load more ...</button>
+        <!-- <button id="anime-loadmore">Load more ...</button> -->
       <?php
       }
       ?>
@@ -92,24 +76,18 @@
     </div>
   </div>
 </section>
-<?php foreach ($ads as $value) {
-  if ($value['ads_position'] == "2") {
-?>
 
-    <section id="anime-banners" class="bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-12 ">
-            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
-          </div>
-        </div>
+<section id="movie-banners" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 ">
+        <img class="banners" src="https://gurubac.com/images/banner.jpg">
+        <img class="banners" src="https://gurubac.com/images/banner.jpg">
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-<?php } else {
-  }
-}
-?>
 <script>
   $(document).ready(function() {
     var track_click = 2; //track user click on "load more" button, righ now it is 0 click

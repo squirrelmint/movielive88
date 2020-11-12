@@ -80,7 +80,7 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
-	public function anime($id, $Name, $ep_index = 0, $Nameep)
+	public function video($id, $Name, $ep_index = 0, $Nameep)
 	{
 		$data_anime = $this->VideoModel->get_anime_data($id);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
@@ -88,14 +88,14 @@ class Home extends BaseController
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$date = get_date($data_anime['movie_create']);
 
-
 		// echo '<pre>' . print_r($data_anime, true) . '</pre>';
 		// die;
 		$chk_act = [
 			'home' => 'active',
-			'subthai' => '',
-			'soundthai' => '',
-			'category' => '',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
 		];
 
 		$header_data = [
@@ -116,11 +116,11 @@ class Home extends BaseController
 
 		];
 		echo view('templates/header.php', $header_data);
-		echo view('anime.php', $body_data);
+		echo view('video.php', $body_data);
 		echo view('templates/footer.php');
 	}
 
-	public function animedata()
+	public function moviedata()
 	{
 		$pagination = $this->VideoModel->get_list_video($this->branch, '', '', $_GET['page']);
 		foreach ($pagination['list'] as $val) {
@@ -136,7 +136,7 @@ class Home extends BaseController
 		echo view('animedata.php', $header_data);
 	}
 
-	public function animedata_search()
+	public function moviedata_search()
 	{
 		$pagination = $this->VideoModel->get_list_video($this->branch, $_GET['keyword'], '', $_GET['page']);
 		foreach ($pagination['list'] as $val) {
@@ -152,7 +152,7 @@ class Home extends BaseController
 		echo view('animedata.php', $header_data);
 	}
 
-	public function animedata_category()
+	public function moviedata_category()
 	{
 
 		$pagination = $this->VideoModel->get_list_video($this->branch, '', $_GET['keyword'],  $_GET['page']);
@@ -169,19 +169,55 @@ class Home extends BaseController
 		echo view('animedata.php', $header_data);
 	}
 
-	public function list() //ต้นแบบ หน้า cate / search
+	public function categorylist() //ต้นแบบ หน้า cate / search
 	{
-		$list_category = $this->VideoModel->get_category($this->branch);
-		// echo '<pre>' . print_r($list_category, true) . '</pre>';
-		// die;
+		$chk_act = [
+			'home' => 'active',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
+		];
+
 		$header_data = [
 			'document_root' => $this->document_root,
-			'list_category' => $list_category,
+			'path_thumbnail' => $this->path_thumbnail,
+			'chk_act' => $chk_act,
+		];
 
+		$list_category = $this->VideoModel->get_category($this->branch);
+
+		$body_data = [
+			'list_category' => $list_category
+		];
+
+
+		echo view('templates/header.php', $header_data);
+		echo view('category.php', $body_data);
+		echo view('templates/footer.php');
+	}
+
+	public function popular() //ต้นแบบ หน้า cate / search
+	{
+		$list_category = $this->VideoModel->get_category($this->branch);
+
+		$chk_act = [
+			'home' => 'active',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
+		];
+
+		$header_data = [
+			'document_root' => $this->document_root,
+			'path_thumbnail' => $this->path_thumbnail,
+			'chk_act' => $chk_act,
+			'list_category' => $list_category
 		];
 
 		echo view('templates/header.php', $header_data);
-		echo view('list.php');
+		echo view('popular.php');
 		echo view('templates/footer.php');
 	}
 
@@ -199,9 +235,10 @@ class Home extends BaseController
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$chk_act = [
 			'home' => 'active',
-			'subthai' => '',
-			'soundthai' => '',
-			'category' => '',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
 		];
 
 		$header_data = [
@@ -235,13 +272,14 @@ class Home extends BaseController
 		}
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
+		
 		$chk_act = [
-			'home' => '',
-			'subthai' => '',
-			'soundthai' => '',
-			'category' => 'active',
+			'home' => 'active',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
 		];
-
 		// echo '<pre>' . print_r($pagination['list'], true) . '</pre>';
 		// die;
 		$header_data = [
@@ -267,10 +305,6 @@ class Home extends BaseController
 		echo view('list.php', $body_data);
 		echo view('templates/footer.php');
 	}
-
-
-
-
 
 	public function player($id, $index)
 	{

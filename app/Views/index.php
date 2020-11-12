@@ -1,50 +1,3 @@
-  
-    <!-- Slider main container -->
-    <div id="HomeSlide" class="swiper-container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-          <!-- Slides -->
-
-          <div class="swiper-slide">
-            <div class="slider-area">
-              <h2 class="title-slider">Iron man</h2>
-            </div>
-            <img src="<?= $document_root ?>img_slide/1.jpg">
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slider-area">
-              <h2 class="title-slider">Joker</h2>
-            </div>
-            <img src="<?= $document_root ?>img_slide/2.jpg">
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slider-area">
-              <h2 class="title-slider">Joker</h2>
-            </div>
-            <img src="<?= $document_root ?>img_slide/3.jpg">
-          </div>
-
-          <div class="swiper-slide">
-            <div class="slider-area">
-              <h2 class="title-slider">Joker</h2>
-            </div>
-            <img src="<?= $document_root ?>img_slide/4.jpg">
-          </div>
-
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
-    </div>
-  </header>
 
   <section class="movie-content text-center">
     <div class="container">
@@ -92,13 +45,24 @@
                 </h2>
 
                 <div class="movie-score">
-                <i class="fas fa-star"></i> 9.8
+                  <i class="fas fa-star"></i> 9.8
                 </div>
               </div>
             </li>
           <?php  } ?>
         </ul>
         <!-- <button id="movie-loadmore">Load more ...</button> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="movie-banners" class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 ">
+          <img class="banners" src="https://gurubac.com/images/banner.jpg">
+          <img class="banners" src="https://gurubac.com/images/banner.jpg">
+        </div>
       </div>
     </div>
   </section>
@@ -113,24 +77,7 @@
       </div>
     </div>
   </section>
-  <?php foreach ($ads as $value) {
-    if ($value['ads_position'] == "2") {
-  ?>
 
-      <section id="anime-banners" class="bg-light text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-lg-12 ">
-              <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
-            </div>
-          </div>
-        </div>
-      </section>
-
-  <?php } else {
-    }
-  }
-  ?>
   <script>
 
     $(document).ready(function() {
