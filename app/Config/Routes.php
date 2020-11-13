@@ -41,7 +41,7 @@ $routes->get('search/(:any)', 'Home::search/$1');
 $routes->get('popular', 'Home::popular');
 $routes->get('category', 'Home::categorylist');
 $routes->get('category/(:num)/(:any)', 'Home::category/$1/$2');
-$routes->get('list', 'Home::list');
+$routes->get('contract', 'Home::contract');
 
 $routes->get('countview/(:num)', 'Home::countView/$1');
 

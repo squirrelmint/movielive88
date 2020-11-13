@@ -53,7 +53,7 @@
               <a class="nav-link" href=" <?php echo base_url() ?> ">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item <?= $chk_act['poppular'] ?>">
-              <a class="nav-link" href="#">Poppular</a>
+              <a class="nav-link" href="#">Popular</a>
             </li>
             <li class="nav-item <?= $chk_act['netflix'] ?>">
               <a class="nav-link" href="#">Netflix</a>
@@ -87,94 +87,19 @@
       </div>
     </nav>
 
-    <!-- Modal -->
-    <div class="modal fade" id="anime-contract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <ul class="nav nav-pills">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#request">ขอหนัง</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#contract">ติดต่อลงโฆษณา</a>
-              </li>
-            </ul>
-
-            <div class="tab-content" id="formrequest">
-              <div id="request" class="tab-pane container active">
-                <form class="anime-formcontract" novalidate method="POST" action="">
-                  <textarea rows="4" id="request_text" type="text" class="form-control" required autocomplete="off"></textarea>
-                  <center><button type="submit" class="anime-btnrequest">ส่งข้อความ</button></center>
-                </form>
-              </div>
-
-              <div id="contract" class="tab-pane container fade">
-                <form class="anime-formcontract" novalidate method="POST" action="">
-                  <label for="ads_con_name"> ชื่อ สกุล :</label>
-                  <input id="ads_con_name" name="ads_con_name" type="text" class="form-control" required autocomplete="off">
-                  <div class="invalid-feedback">
-                    กรุณากรอกชื่อ นามสกุล
-                  </div>
-                  <label for="ads_con_email"> Email :</label>
-                  <input id="ads_con_email" type="text" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$" required autocomplete="off">
-                  <div class="invalid-feedback">
-                    กรุณากรอก Email เช่น " xxx@xxx.com "
-                  </div>
-                  <label for="ads_con_line"> Line ID :</label>
-                  <input id="ads_con_line" type="text" class="form-control" required autocomplete="off">
-                  <div class="invalid-feedback">
-                    กรุณากรอก Line ID
-                  </div>
-                  <label for="ads_con_tel"> เบอร์โทรศัพท์ :</label>
-                  <input id="ads_con_tel" type="text" class="form-control" required autocomplete="off" pattern="^0([8|9|6])([0-9]{8}$)">
-                  <div class="invalid-feedback">
-                    กรุณากรอก เบอร์โทรศัพท์ 10หลัก เช่น " 0600000000 "
-                  </div>
-
-                  <label id="ads_con_all_alt">**กรุณากรอกข้อมูลให้ครบทุกช่อง</label>
-
-                  <center><button type="submit" class="anime-btnrequest">ส่งข้อความ</button></center>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script type="text/javascript">
-      $(function() {
-        $(".anime-formcontract").on("submit", function() {
-          var form = $(this)[0];
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          3
-          form.classList.add('was-validated');      
-        });
-      });
-    </script>
-    <script>
       $(document).ready(function() {
-        $("#ads_con_email_alt").hide();
-        $('#anime-formsearch').submit(function(e) {
+        $('#movie-formsearch').submit(function(e) {
           goSearch();
           return false; //<---- Add this line
         });
       });
-
       function goSearch() {
-        var animesearch = $.trim($("#anime-search").val())
+        var search = $.trim($("#movie-search").val())
 
-        if (animesearch) {
-          window.location.href = "/search/" + $("#anime-search").val();
+        if (search) {
+          window.location.href = "/search/" + $("#movie-search").val();
         } else {
           window.location.href = "<?= base_url() ?>";
         }

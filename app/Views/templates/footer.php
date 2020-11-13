@@ -19,36 +19,6 @@
               } ?>
   </div>
 
-  <div class="menu-mobile">
-    <ul>
-      <li>
-        <a href=" <?php echo base_url() ?> ">
-          <i class="fas fa-home"></i>HOME
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <i class="fas fa-language"></i>SUB-THAI
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <i class="fab fa-teamspeak"></i>SOUND-THAI
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick="openNav()">
-          <i class="fas fa-film"></i>CATEGORY
-        </a>
-      </li>
-      <li>
-        <a href="#" data-toggle="modal" data-target="#anime-contract">
-          <i class="fas fa-comments"></i>CONTRACT
-        </a>
-      </li>
-    </ul>
-  </div>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">

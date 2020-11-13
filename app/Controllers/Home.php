@@ -306,6 +306,30 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
+	public function contract() //ต้นแบบ หน้า cate / search
+	{
+		$list_category = $this->VideoModel->get_category($this->branch);
+
+		$chk_act = [
+			'home' => 'active',
+			'poppular' => '',
+			'newmovie' => '',
+			'netflix' => '',
+			'category' => ''
+		];
+
+		$header_data = [
+			'document_root' => $this->document_root,
+			'path_thumbnail' => $this->path_thumbnail,
+			'chk_act' => $chk_act,
+			'list_category' => $list_category
+		];
+
+		echo view('templates/header.php', $header_data);
+		echo view('contract.php');
+		echo view('templates/footer.php');
+	}
+
 	public function player($id, $index)
 	{
 		$anime = $this->VideoModel->get_anime_data($id);
@@ -326,8 +350,10 @@ class Home extends BaseController
 
 		echo view('player.php', $data);
 	}
+
 	public function countView($id)
 	{
 		$this->VideoModel->countView($id);
 	}
+	
 }

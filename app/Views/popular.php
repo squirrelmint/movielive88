@@ -3,7 +3,7 @@
     <div class="container">
       <div id="movie-list" class="row">
         <div class="movie-title-list">
-          <h1>POPPULAR</h1>
+          <h1>POPULAR</h1>
         </div>
         <ul class="list-popular">
           <li>
